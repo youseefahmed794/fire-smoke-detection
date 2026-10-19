@@ -1,0 +1,10 @@
+# Isolated CPU demo: direct non-PyTorch dependencies, observed 2026-10-19.
+# Install requirements-demo-cpu-torch.txt from the official CPU index FIRST.
+# Then use this file with -c requirements-demo-cpu-resolved.txt (see README).
+# requests is also used by the suite's HTTP mock; services remain disabled.
+# Python 3.12.3, Ubuntu 24.04, Linux x86_64. Fresh reproduction NOT tested.
+ultralytics==8.4.182
+cvzone==2.0.0
+opencv-python==5.0.0.93
+numpy==2.5.2
+requests==2.34.2

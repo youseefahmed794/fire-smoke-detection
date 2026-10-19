@@ -1,0 +1,32 @@
+# Assets & Detections
+assets/
+detect/
+logs/
+
+# Environment & Database
+.env
+*.db
+
+# Python
+__pycache__/
+*.pyc
+*.log
+
+# Models & Weights
+models_weights/
+*.pt
+*.pth
+*.onnx
+
+# Media Files
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.jpg
+*.png
+
+/.venv/
+
+# Local annotated demo videos and run reports
+/demo-output/

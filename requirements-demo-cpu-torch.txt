@@ -1,0 +1,6 @@
+# Direct CPU PyTorch prerequisites, observed installed versions, 2026-10-19.
+# Install separately with --index-url https://download.pytorch.org/whl/cpu
+# (the official PyTorch CPU wheel index), NOT an ordinary PyPI-only install.
+# See README for ordering, constraints, platform scope, and unverified availability.
+torch==2.14.1+cpu
+torchvision==0.29.1+cpu

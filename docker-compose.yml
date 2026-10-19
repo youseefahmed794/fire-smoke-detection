@@ -1,0 +1,47 @@
+
+
+services:
+  fire-system:
+    build: .
+    image: fire-smoke-detection:latest
+    container_name: fire_detection_system
+    # Restart automatically if it crashes
+    restart: unless-stopped
+
+    # Map video devices for camera access (Linux/WSL only)
+    # devices:
+    #   - /dev/video0:/dev/video0
+
+    volumes:
+      # Mount the .env file for configuration
+      - ./.env:/app/.env
+
+      # Mount the models folder so you can update weights without rebuilding
+      - ./models_weights:/app/models_weights
+
+      # Mount the detect folder to see output images on host
+      - ./src/detect:/app/src/detect
+
+      # Mount logs folder
+      - ./logs:/app/logs
+
+      # Mount assets for video file testing
+      - ./assets:/app/assets
+
+      # Persist the database
+      - ./fire_system.db:/app/fire_system.db
+
+    # Interactive mode support (tty: true, stdin_open: true)
+    tty: true
+    stdin_open: true
+
+    ports:
+      - "8000:8000"
+
+    environment:
+      - HEADLESS=true
+      - HOST=0.0.0.0
+      - PORT=8000
+
+    # Overridable command - Runs the API server by default
+    command: python server.py

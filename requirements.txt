@@ -1,0 +1,15 @@
+ultralytics
+cvzone
+opencv-python
+requests
+python-dotenv
+cloudinary
+GPUtil
+psutil
+numpy
+inference
+tabulate
+fastapi
+uvicorn
+python-multipart
+# Anti-spoofing dependencies (kept numpy and opencv-python)
